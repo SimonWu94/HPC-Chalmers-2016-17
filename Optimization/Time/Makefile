@@ -1,4 +1,4 @@
-CC=gcc 
+CC=gcc -std=c99
 CFLAGS = -I.
 ASSEMBLY = -S 
 
@@ -10,12 +10,12 @@ main0 main1 main2 main3 mains maing: main%: main.c
 	$(CC) $(CFLAGS) -O$* main.c -o main$*.out 
 
 time: 
-	time -p bash -c "for i in {0..100}; do ./main0.out ; done " 
-	time -p bash -c "for i in {0..100}; do ./main1.out ; done "
-	time -p bash -c "for i in {0..100}; do ./main2.out ; done "
-	time -p bash -c "for i in {0..100}; do ./main3.out ; done "
-	time -p bash -c "for i in {0..100}; do ./mains.out ; done "
-	time -p bash -c "for i in {0..100}; do ./maing.out ; done "	
+	time -p bash -c "for i in {1..100}; do ./main0.out ; done " 
+	time -p bash -c "for i in {1..100}; do ./main1.out ; done "
+	time -p bash -c "for i in {1..100}; do ./main2.out ; done "
+	time -p bash -c "for i in {1..100}; do ./main3.out ; done "
+	time -p bash -c "for i in {1..100}; do ./mains.out ; done "
+	time -p bash -c "for i in {1..100}; do ./maing.out ; done "	
 
 assembler:
 	$(CC) $(ASSEMBLY) $(CFLAGS) -O0 main.c -o main0.s

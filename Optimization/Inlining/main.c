@@ -1,13 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-void mul_cpx( double * a_re, double * a_im, double * b_re, double * b_im, double * c_re, double * c_im){
-
-*a_re = (*b_re) * (*c_re) - (*b_im) * (*c_im) ;
-*a_im = (*b_re) * (*c_im) + (*b_im) * (*c_re) ;
-
-
-};
+#include<stdio.h>
+#include<stdlib.h>
 
 int main(){
 
@@ -29,10 +21,13 @@ a_re[i]=0.;
 a_im[i]=0.;
 };
 
+
 for (int k=0; k<30000;k++){
-mul_cpx(&a_re[k],&a_im[k],&b_re[k],&b_im[k],&c_re[k],&c_im[k]);
+a_re[k] = b_re[k] * c_re[k] - b_im[k] * c_im[k] ;
+a_im[k] = b_re[k] * c_im[k] + b_im[k] * c_re[k] ;
 /*printf("Real part is: %G \n",a_re[k]);
 printf("Imaginary part is: %G \n ", a_im[k]);
 */};
 
 return 0;}
+

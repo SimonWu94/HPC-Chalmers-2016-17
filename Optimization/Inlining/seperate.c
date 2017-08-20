@@ -1,11 +1,11 @@
 #include <stdio.h>
-#include<function.h>
+#include<seperate.h>
 
-int main(){
+/*void mul_cpx_ext( double *a_re, double * a_im, double * b_re, double * b_im, double * c_re, double * c_im);
+*/
+void mul_cpx_ext (double *a_re,double * a_im,double *  b_re ,double * b_im,double * c_re, double * c_im){
 
-
-
-mul_cpx_ext();
-
+*a_re = (*b_re) * (*c_re) - (*b_im) * (*c_im) ;  
+*a_im = (*b_re) * (*c_im) + (*b_im) * (*c_re) ;
 
 };
