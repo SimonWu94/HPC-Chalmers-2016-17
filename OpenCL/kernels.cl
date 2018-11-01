@@ -9,8 +9,8 @@ __kernel void upDate(__global const double* heatValue_0,
 	double tmp= 0.;	
 
 	tmp += heatValue_0[px+1];
-    tmp += heatValue_0[px-1];
-    tmp += heatValue_0[px+width];
+        tmp += heatValue_0[px-1];
+        tmp += heatValue_0[px+width];
 	tmp += heatValue_0[px-width];
 
 	tmp *= diffConst*0.25;
